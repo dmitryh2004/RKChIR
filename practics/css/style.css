@@ -5,8 +5,17 @@ body {
 }
 
 section {
-    border: 2px solid #888;
+    border: 2px solid #000;
     background-color: #ddd;
+    padding:20px;
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px auto;
+}
+
+article {
+    border: 2px solid #d8d;
+    background-color: #fdf;
     padding:20px;
     border-radius: 10px;
     width: 80%;
@@ -28,7 +37,7 @@ td aside{
 }
 
 nav{
-    border: 2px solid #888;
+    border: 2px solid #f88;
     background-color: rgb(255, 189, 189);
     padding:20px;
     border-radius: 10px;
@@ -37,7 +46,7 @@ nav{
 }
 
 address{
-    border: 5px outset #888;
+    border: 5px outset #ff8;
     background-color: rgb(255, 255, 189);
     padding:20px;
     border-radius: 10px;
@@ -47,7 +56,7 @@ address{
 }
 
 footer {
-    border: 2px solid #888;
+    border: 2px solid #ff8;
     background-color: rgb(255, 255, 189);
     padding:20px;
     border-radius: 10px;
