@@ -11,6 +11,7 @@ section {
     border-radius: 10px;
     width: 80%;
     margin: 20px auto;
+    height: auto;
 }
 
 article {
@@ -24,63 +25,66 @@ article {
 
 #work_principles{
     border: none;
+    width:100%;
     background-color: #ddd;
+    padding: 0px;
+    margin: 0px;
 }
 
-td aside{
+aside{
+    float: right;
     border: 2px dashed #888;
     background-color: #eee;
     padding:20px;
     border-radius:10px;
-    width: 80%;
-    margin: 20px auto;
+    width: 50%;
+    margin: 20px 20px;
 }
 
-.text_and_img_ol {
+.image_and_text_list {
     border: none;
     padding:20px;
-    margin-top: -20px;
-    margin-bottom: 20px;
-    margin-left: -4.5ch;
-    margin-right: 0px;
+    margin: 0px 10px;
+    display: inline-block;
+    height: auto;
+}
+
+.image_and_text {
+    border: none;
+    padding:0px;
+    margin: 0px 10px;
+    margin-left:0px;
+    display: inline-block;
+    height: auto;
+}
+
+.image {
+    border: none;
+    padding:20px;
+    width:25%;
+    min-width:300px;
+    float: right; 
+}
+
+.text {
+    border: none;
+    padding: 20px;
     width:100%;
 }
 
-.text_and_img {
+.image_and_text > .image {
     border: none;
     padding:20px;
     padding-top: 0px;
-    margin-top: -20px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: 0px;
+    width:25%;
+    min-width:300px;
+    float: right; 
+}
+
+.image_and_text > .text {
+    border: none;
+    padding: 0px;
     width:100%;
-}
-
-.leftside {
-    border: none;
-    padding:20px;
-    width:75%;
-    vertical-align: top;
-    text-align: left;
-}
-
-.rightside_ol {
-    border: none;
-    padding:20px;
-    width:25%;
-    min-width:200px;
-    vertical-align: top;
-    text-align: left;
-}
-
-.rightside {
-    border: none;
-    padding:20px;
-    width:25%;
-    min-width:200px;
-    vertical-align: center;
-    text-align: left;
 }
 
 nav{
