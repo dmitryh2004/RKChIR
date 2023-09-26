@@ -129,6 +129,19 @@ nav{
     transition-duration: 0.5s;
 }
 
+.footer_input {
+    border: 2px solid #000;
+    background-color: #ff6;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.footer_input:hover {
+    border: 2px solid #888;
+    background-color: #ff9;
+    transition-duration: 0.5s;
+}
+
 address{
     border: 5px outset #ff8;
     background-color: rgb(255, 255, 189);
@@ -136,6 +149,7 @@ address{
     border-radius: 10px;
     width: 80%;
     margin: 0 auto;
+    margin-bottom:10px;
     text-align: center;
 }
 
