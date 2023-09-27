@@ -7,10 +7,11 @@
         <link rel="icon" type="image/png" href="samokat.png"> <!-- фавиконка сайта -->
         <link rel="stylesheet" type="text/css" href="css/fonts.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="preload" href="js/hide_management.js" as="script" onload="init();">
         <title>ООО "Электросамокаты"</title> <!-- название страницы -->
-        <script src="js/nav_show.js"></script>
+        <script src="js/hide_management.js" rel="preload"></script>
     </head>
-    <body onload="init();">
+    <body>
         <header>
             <img src="top_of_the_site.png" alt ="Логотип компании ООО ''Электросамокаты''" id="top_of_the_site">
         </header>
@@ -37,7 +38,7 @@
                         </li>
                         <li><a href="#third">Текущая доступность электросамокатов</a></li>
                         <li><a href="#fourth">Можно ли сравнивать элестросамокат с автомобилем</a></li>
-                        <li><a href="#about_us">Наши контакты</a></li>
+                        <li><a href="#about_us">О нашей компании</a></li>
                     </ol>
                 </div>
             </nav>
@@ -275,7 +276,15 @@
                     Таким образом, в общих чертах можно сказать, что владельцы электросамокатов считаются как пешеходами, так и водителями, но однозначно отнести их только к одному из двух типов участников ПДД нельзя. С нюансами ПДД для СИМ можно ознакомиться <a href="https://journal.tinkoff.ru/news/sim-electrosamokat/" type="external">здесь</a>.
                 </p>
             </section>
-            <!-- здесь будет секция с видео с рикроллом -->
+            <section>
+                Узнать больше об электросамокатах можно в видео ниже.<br>
+                <iframe width="500" height="281" src="test video.mp4" style="float: left;">
+                    Видео недоступно. Возможно, это из-за проблем с браузером :(
+                </iframe>
+                <iframe width="500" height="281" src="https://www.youtube.com/embed/cyfNtBW0fjw" style="float: right;" frameborder="0" allowfullscreen>
+                    Видео недоступно. Возможно, это из-за проблем с браузером :(
+                </iframe>
+            </section>
             <div class="to_the_top_button">
                 <a href="#top_of_the_site">
                     <img src="to_the_top.png">
@@ -295,19 +304,96 @@
                 </div>
                 <button class="footer_input" id="hide_contacts" onclick="HideContacts();">Скрыть</button>
             </address>
-
-            <button class="footer_input" id="show_map" onclick="ShowMapImage();">Показать интерактивную картинку</button>
-            <div id="map_hideable">
-                <img src="links.png" alt="Полезные ссылки" usemap="#links"> <!-- картинка-карта -->
-                <map name="links"> <!-- описание карты -->
-                    <area shape="rectangle" coords="7,75,149,147" href="#top_of_the_site"> <!-- область-прямоугольник -->
-                    <area shape="poly" coords="245,66,180,98,205,150,285,150,311,98" href="tel:89055721859"> <!-- область-многоугольник -->
-                    <area shape="circle" coords="387,109,58" href="mailto:dhohlinov@mail.ru?subject=Хочу электросамокат&body=Здравствуйте! Я хочу заказать у вас электросамокат."> <!-- область-круг -->
-                </map>
+            <div class="hideable_block left">
+                <button class="footer_input" id="show_map" onclick="ShowMap();">Показать карту</button>
+                <div id="map_hideable">
+                    <strong>Карта прохода к офису нашей компании</strong> (и по совместительству - РТУ МИРЭА)<br>
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa704be92b9e7e7403885dee29d6cd9a7e9405267d0ee0fd351ab65bfd742cb0b&amp;source=constructor" width="280" height="350" frameborder="0">Ошибка при загрузке карты. Возможно, браузер не поддерживает эту функцию.</iframe>
+                </div>
+                <button class="footer_input" id="hide_map" onclick="HideMap();">Скрыть</button>
             </div>
-            <button class="footer_input" id="hide_map" onclick="HideMapImage();">Скрыть</button>
-
-             <!-- здесь будет секция с Очень Большой формой -->
+            <div class="hideable_block right">
+                <button class="footer_input" id="show_map_image" onclick="ShowMapImage();">Показать интерактивную картинку</button>
+                <div id="map_image_hideable">
+                    <img src="links.png" alt="Полезные ссылки" usemap="#links"> <!-- картинка-карта -->
+                    <map name="links"> <!-- описание карты -->
+                        <area shape="rectangle" coords="3,37,75,74" href="#top_of_the_site"> <!-- область-прямоугольник -->
+                        <area shape="poly" coords="122,33,90,49,102,75,142,75,155,49" href="tel:89055721859"> <!-- область-многоугольник -->
+                        <area shape="circle" coords="193,54,29" href="mailto:dhohlinov@mail.ru?subject=Хочу электросамокат&body=Здравствуйте! Я хочу заказать у вас электросамокат."> <!-- область-круг -->
+                    </map>
+                </div>
+                <button class="footer_input" id="hide_map_image" onclick="HideMapImage();">Скрыть</button>
+            </div>
+            
+            <div class="hideable_block">
+                <button class="footer_input" id="show_form" onclick="ShowForm();">Показать форму заказа электросамоката</button>
+                <div id="form_hideable">
+                    <p>
+                        Здесь вы можете отправить свой заказ электросамоката. <br><strong>Внимание!</strong> Возможность заказать электросамокат есть <u>только</u> у совершеннолетних!<br>
+                    </p>
+                    <form method="post" name="very_big_form">
+                        <label><input type="checkbox" name="more_than_18_yo" required>Мне есть 18 лет</label>
+                        <br>
+                        <fieldset id="form_FIO">
+                            <legend>ФИО заказчика</legend>
+                            <label><input type="text" name="surname" placeholder="Иванов" required>Фамилия</label>
+                            <label><input type="text" name="name" placeholder="Иван" required>Имя</label>
+                            <label><input type="text" name="patronymic" placeholder="Иванович" required>Отчество</label>
+                            <label><input type="file" name="passport" required><br>Загрузите фото первого разворота паспорта, чтобы мы могли убедиться, что вам есть 18 лет. Не волнуйтесь, мы не будем продавать это фото мошенникам. Пока что.</label>
+                        </fieldset>
+                        <fieldset id="form_contacts">
+                            <legend>Контакты и банковский счет заказчика</legend>
+                            <label><input type="email" name="email" placeholder="ivanov@mail.ru" required>E-mail</label>
+                            <label><input type="tel" name="phone" placeholder="88005553535" required maxlength="11" minlength="11">Номер телефона</label>
+                            <label><input type="password" name="card_number" placeholder="1234567812345678" maxlength="16" minlength="16" required>Номер банковской карты</label>
+                        </fieldset>
+                        <fieldset id="form_question1">
+                            <legend>Вопрос 1</legend>
+                            Зачем вам нужен электросамокат?
+                            <label><input type="radio" name="question1" value="Для личного пользования" required>Для личного пользования</label>
+                            <label><input type="radio" name="question1" value="Для сдачи в аренду" required>Для сдачи в аренду</label>
+                            <label><input type="radio" name="question1" value="Для перепродажи" required>Для перепродажи</label>
+                        </fieldset>
+                        <fieldset id="form_question2">
+                            <legend>Вопрос 2</legend>
+                            Как часто вы планируете использовать электросамокат?
+                            <label><input type="radio" name="question2" value="Раз в месяц и реже" required>Раз в месяц и реже</label>
+                            <label><input type="radio" name="question2" value="Несколько раз в месяц" required>Несколько раз в месяц</label>
+                            <label><input type="radio" name="question2" value="Еженедельно" required>Еженедельно</label>
+                            <label><input type="radio" name="question2" value="Несколько раз в неделю" required>Несколько раз в неделю</label>
+                            <label><input type="radio" name="question2" value="Ежедневно" required>Ежедневно</label>
+                        </fieldset>
+                        <fieldset id="form_date">
+                            <legend>Дата доставки</legend>
+                            К какому числу вам нужен электросамокат?<br>
+                            <label><input type="datetime-local" name="datetime"></label>
+                            Внимание - мы не гарантируем, что электросамокат будет доставлен именно в этот день; доставка может задержаться.<br>
+                            Время доставки минимально по Москве и МО и растет с увеличением расстояния до Москвы.
+                        </fieldset>
+                        <fieldset id="city_select_field">
+                            <legend>Город</legend>
+                            <label>Выберите город, в который нужно доставить электросамокат:<br>
+                                <select name="city" id="city_select" required>
+                                    <option value="">--Выбрать--</option>
+                                    <option value="moscow">Москва</option>
+                                    <option value="peterburg">Санкт-Петербург</option>
+                                    <option value="sochi">Сочи</option>
+                                    <option value="magadan">Магадан</option>
+                                    <option value="kaliningrad">Калининград</option>
+                                    <option value="other">Другой город (напишу в отзыве)</option>
+                                </select>
+                            </label>
+                        </fieldset>
+                        <fieldset id="feedback_field">
+                            <legend>Отзыв</legend>
+                            Введите отзыв о нашем сайте (необязательно). Если вы выбрали "Другой город" в поле "Выбрать город", то запишите свой город сюда:
+                            <textarea id="feedback" cols="30" rows="10" maxlength="1000">Добрый день. Мне очень понравился ваш сайт, особенно - оформление.</textarea>
+                        </fieldset>
+                        <button type="sumbit">Отправить заказ</button>
+                    </form>
+                </div>
+                <button class="footer_input" id="hide_form" onclick="HideForm();">Скрыть</button>
+            </div>
         </footer>    
     </body>
 </html>

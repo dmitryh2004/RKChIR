@@ -142,6 +142,28 @@ nav{
     transition-duration: 0.5s;
 }
 
+.hideable_block {
+    display: inline-block;
+    border: 5px inset #ff8;
+    background-color: rgb(255, 255, 189);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0px;
+    width:80%;
+}
+
+.hideable_block.left {
+    width:40%;
+    float: left;
+    overflow: auto;
+}
+
+.hideable_block.right {
+    width:40%;
+    float: right;
+    overflow: auto;
+}
+
 address{
     border: 5px outset #ff8;
     background-color: rgb(255, 255, 189);
@@ -158,7 +180,7 @@ footer {
     background-color: rgb(255, 255, 189);
     padding:20px;
     border-radius: 10px;
-    width: 40%;
+    width: 60%;
     margin: 20px auto;
     text-align: center;
     overflow: auto;
@@ -195,7 +217,7 @@ img.block_decoration {
 footer img {
     margin: 10px 0px;
     border: none;
-    width: 467px;
+    width: 234px;
     max-width: none;
 }
 
@@ -241,4 +263,116 @@ body {
     right: 10px;
     width: 50px;
     height: 50px;
+}
+
+form {
+    border: 2px solid #8f8;
+    background-color: rgb(189, 255, 189);
+    padding:20px;
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px auto;
+    text-align: left;
+}
+
+form > fieldset {
+    margin: 10px;
+    width:80%;
+    display: inline-block;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
+fieldset#form_FIO {
+    background-color: rgba(255, 0, 255, 0.33);
+}
+
+fieldset#form_contacts {
+    background-color: rgba(0, 0, 255, 0.33);
+}
+
+fieldset#form_question1 {
+    background-color: rgba(255, 255, 0, 0.33);
+}
+
+fieldset#form_question2 {
+    background-color: rgba(0, 255, 255, 0.33);
+}
+
+fieldset#form_date {
+    background-color: rgba(255, 0, 0, 0.33);
+}
+
+fieldset#city_select_field {
+    background-color: rgba(255, 255, 255, 0.33);
+}
+
+fieldset#feedback_field {
+    background-color: rgba(0, 255, 0, 0.33);
+}
+
+fieldset > legend {
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 0px 10px;
+    background-color: #fff;
+}
+
+fieldset > label {
+    margin: 10px;
+    width:100%;
+    display: inline-block;
+}
+
+label > input {
+    border: 2px solid #000;
+    background-color: #eee;
+    margin-right: 1ch;
+}
+
+label > input:hover {
+    border: 2px solid #ff0;
+    background-color: #ff8;
+}
+
+label > input:focus {
+    border: 2px solid #c60;
+    background-color: #ff0;
+}
+
+label > input::placeholder {
+    color: #88f;
+    font-style: italic;
+}
+
+label > select {
+    border: 2px solid #000;
+    background-color: #eee;
+    margin-right: 1ch;
+}
+
+label > select:hover {
+    border: 2px solid #ff0;
+    background-color: #ff8;
+}
+
+label > select:focus {
+    border: 2px solid #c60;
+    background-color: #ff0;
+}
+
+label > textarea {
+    border: 2px solid #000;
+    background-color: #eee;
+    margin-right: 1ch;
+}
+
+label > textarea:hover {
+    border: 2px solid #ff0;
+    background-color: #ff8;
+}
+
+label > textarea:focus {
+    border: 2px solid #c60;
+    background-color: #ff0;
 }
