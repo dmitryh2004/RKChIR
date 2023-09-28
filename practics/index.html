@@ -9,9 +9,12 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="preload" href="js/hide_management.js" as="script" onload="init();">
         <title>ООО "Электросамокаты"</title> <!-- название страницы -->
-        <script src="js/hide_management.js" rel="preload"></script>
+        <script src="js/hide_management.js"></script>
     </head>
-    <body>
+    <body onload="init();">
+        <div id="loading">
+            <img src="loading.gif" id="loading-gif">
+        </div>
         <header>
             <img src="top_of_the_site.png" alt ="Логотип компании ООО ''Электросамокаты''" id="top_of_the_site">
         </header>
@@ -339,7 +342,7 @@
                             <label><input type="text" name="surname" placeholder="Иванов" required>Фамилия</label>
                             <label><input type="text" name="name" placeholder="Иван" required>Имя</label>
                             <label><input type="text" name="patronymic" placeholder="Иванович" required>Отчество</label>
-                            <label><input type="file" name="passport" required><br>Загрузите фото первого разворота паспорта, чтобы мы могли убедиться, что вам есть 18 лет. Не волнуйтесь, мы не будем продавать это фото мошенникам. Пока что.</label>
+                            <label><input type="file" name="passport" required><br>Загрузите фото первого разворота паспорта, чтобы мы могли убедиться, что вам есть 18 лет. Не волнуйтесь, мы не будем продавать это фото мошенникам. <em id="small_font">Пока что.</em></label>
                         </fieldset>
                         <fieldset id="form_contacts">
                             <legend>Контакты и банковский счет заказчика</legend>

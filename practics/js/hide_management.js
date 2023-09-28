@@ -75,4 +75,6 @@ function init()
     HideMapImage();
     HideMap();
     HideForm();
+    let loading_div = document.getElementById("loading");
+    loading_div.style.display = "none";
 }
