@@ -4,7 +4,7 @@
         <meta charset="utf-8"> <!-- использование utf-8 -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- совместимость с самым медленным браузером IE -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- установка ширины сайта, равной ширине экрана устройства -->
-        <link rel="icon" type="image/png" href="samokat.png"> <!-- фавиконка сайта -->
+        <link rel="icon" type="image/png" href="media/samokat.png"> <!-- фавиконка сайта -->
         <link rel="stylesheet" type="text/css" href="css/fonts.css">
         <link rel="stylesheet" type="text/css" href="css/style ver2.css">
         <link rel="preload" href="js/hide_management.js" as="script" onload="init();">
@@ -308,6 +308,23 @@
                         <iframe width="300" height="168" src="https://www.youtube.com/embed/cyfNtBW0fjw" frameborder="0" allowfullscreen>
                             Видео недоступно. Возможно, это из-за проблем с браузером :(
                         </iframe>
+                    </section>
+                </div>
+                <div class="row">
+                    <section id="images">
+                        Картинки электросамокатов<button class="images_input" id="show_images" onclick="ShowImages();">Показать больше картинок</button>
+                        <div id="image_container">
+                            <img src="media/detskiy-samokat.jpg" alt="Детский самокат">
+                            <img src="http://static10.tgcnt.ru/posts/_0/60/607e220222df76081b6b03359c219b25.jpg" alt="Детский самокат">
+                            <img src="https://3dnews.ru/assets/external/illustrations/2022/05/26/1066765/01.JPG" alt="Детский самокат">
+                            <div id="images_hideable">
+                                <img src="https://3dnews.ru/assets/external/illustrations/2022/05/26/1066765/whoosh_7.JPG" alt="Детский самокат">
+                                <img src="https://3dnews.ru/assets/external/illustrations/2022/05/26/1066765/urent_8.JPG" alt="Детский самокат">
+                                <img src="https://3dnews.ru/assets/external/illustrations/2022/05/26/1066765/yandex_7.JPG" alt="Детский самокат">
+                                <img src="https://filearchive.cnews.ru/img/news/2021/07/07/y1.jpg" alt="Детский самокат">
+                            </div>
+                        </div>
+                        <button class="images_input" id="hide_images" onclick="HideImages();">Скрыть</button>
                     </section>
                 </div>
                 <div class="to_the_top_button">
