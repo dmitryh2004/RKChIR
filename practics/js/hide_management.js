@@ -24,16 +24,6 @@ function HideElement(show_btn_id, hide_btn_id, hideable_id)
     hideable.style.display = "none";
 }
 
-function ShowNavigation()
-{
-    ShowElement("show_nav", "hide_nav", "nav_hideable", false);
-}
-
-function HideNavigation()
-{
-    HideElement("show_nav", "hide_nav", "nav_hideable");
-}
-
 function ShowContacts()
 {
     ShowElement("show_contacts", "hide_contacts", "contacts_hideable", false);
@@ -86,7 +76,6 @@ function HideImages()
 
 function init()
 {
-    HideNavigation();
     HideContacts();
     HideMapImage();
     HideMap();
