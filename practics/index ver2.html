@@ -298,25 +298,36 @@
                 <div class="row">
                     <section>
                         Узнать больше об электросамокатах можно в видео ниже.<br>
-                        <iframe width="300" height="168" src="media/test video.mp4">
-                            Видео недоступно. Возможно, это из-за проблем с браузером :(
-                        </iframe>
-                        <iframe width="300" height="168" src="https://www.youtube.com/embed/cyfNtBW0fjw" frameborder="0" allowfullscreen>
-                            Видео недоступно. Возможно, это из-за проблем с браузером :(
-                        </iframe>
+                        <div id="video_with_text">
+                            <iframe width="300" height="168" src="media/test video 2.mp4">
+                                Видео недоступно. Возможно, это из-за проблем с браузером :(
+                            </iframe>
+                        </div>
                     </section>
                 </div>
                 <div class="row">
                     <section id="images">
-                        Картинки электросамокатов<button class="images_input" id="show_images" onclick="ShowImages();">Показать больше картинок</button>
+                        Картинки электросамокатов <button class="images_input" id="show_images" onclick="ShowImages();">Показать больше картинок</button>
                         <div id="image_container">
-                            <img src="media/detskiy-samokat.jpg" alt="Детский самокат">
-                            <img src="http://static10.tgcnt.ru/posts/_0/60/607e220222df76081b6b03359c219b25.jpg" alt="Детский самокат">
-                            <img src="https://3dnews.ru/assets/external/illustrations/2022/05/26/1066765/01.JPG" alt="Детский самокат">
-                            <div id="images_hideable">
+                            <div class="image_container_img">
+                                <img src="media/detskiy-samokat.jpg" alt="Детский самокат">
+                            </div>
+                            <div class="image_container_img">
+                                <img src="http://static10.tgcnt.ru/posts/_0/60/607e220222df76081b6b03359c219b25.jpg" alt="Детский самокат">
+                            </div>
+                            <div class="image_container_img">
+                                <img src="https://3dnews.ru/assets/external/illustrations/2022/05/26/1066765/01.JPG" alt="Детский самокат">
+                            </div>
+                            <div class="image_container_img hideable">
                                 <img src="https://3dnews.ru/assets/external/illustrations/2022/05/26/1066765/whoosh_7.JPG" alt="Детский самокат">
+                            </div>
+                            <div class="image_container_img hideable">
                                 <img src="https://3dnews.ru/assets/external/illustrations/2022/05/26/1066765/urent_8.JPG" alt="Детский самокат">
+                            </div>
+                            <div class="image_container_img hideable">
                                 <img src="https://3dnews.ru/assets/external/illustrations/2022/05/26/1066765/yandex_7.JPG" alt="Детский самокат">
+                            </div>
+                            <div class="image_container_img hideable">
                                 <img src="https://filearchive.cnews.ru/img/news/2021/07/07/y1.jpg" alt="Детский самокат">
                             </div>
                         </div>
@@ -327,6 +338,41 @@
                     <a href="#top_of_the_site">
                         <img src="media/to_the_top.png">
                     </a>
+                </div>
+                <div class="notifications_block">
+                    <div id="notification_bell_bg">
+                        
+                    </div>
+                    <img id="notification_bell" src="media/notification.png" alt="notification bell" style="width: 50px; height: 50px; display:inline;">
+                    <div id="count">
+                        4
+                    </div>
+                    <div class="notifications_hideable">
+                        <div class="notification_unit">
+                            <div class="notification_number">
+                                1
+                            </div>
+                            Приветствуем вас на нашем сайте!
+                        </div>
+                        <div class="notification_unit">
+                            <div class="notification_number">
+                                2
+                            </div>
+                            Здесь вы сможете найти все, что вы хотели бы узнать об электросамокатах: историю их появления, принципы работы, можно ли сравнивать электросамокат с автомобилем и многое другое.
+                        </div>
+                        <div class="notification_unit">
+                            <div class="notification_number">
+                                3
+                            </div>
+                            Если вас заинтересовала наша продукция, вы сможете позвонить или написать нам, долистав этот сайт до конца!
+                        </div>
+                        <div class="notification_unit">
+                            <div class="notification_number">
+                                4
+                            </div>
+                            Специальное предложение для интровертов: вы можете заполнить форму для заказа электросамоката, чтобы не тратить время и нервы на общение по телефону или почте.
+                        </div>
+                    </div>
                 </div>
             </main>
             <footer>
