@@ -66,12 +66,28 @@ function HideForm()
 
 function ShowImages()
 {
-    ShowElement("show_images", "hide_images", "images_hideable", true);
+    let elements = document.getElementsByClassName("image_container_img hideable");
+    let show_btn = document.getElementById("show_images");
+    let hide_btn = document.getElementById("hide_images");
+    show_btn.style.display = "none";
+    hide_btn.style.display = "inline-block";
+    for (var i = 0, max = elements.length; i < max; i++)
+    {
+        elements[i].style.display = "block";
+    }
 }
 
 function HideImages()
 {
-    HideElement("show_images", "hide_images", "images_hideable");
+    let elements = document.getElementsByClassName("image_container_img hideable");
+    let show_btn = document.getElementById("show_images");
+    let hide_btn = document.getElementById("hide_images");
+    show_btn.style.display = "inline-block";
+    hide_btn.style.display = "none";
+    for (var i = 0, max = elements.length; i < max; i++)
+    {
+        elements[i].style.display = "none";
+    }
 }
 
 function init()
