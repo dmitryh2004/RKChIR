@@ -268,19 +268,21 @@ div#video_with_text::before {
     top: 0;
     bottom: 0;
     right: -270px;
-    display: block;
     width: 300px;
     padding: 10px;
     border: 2px solid #000;
     border-radius: 10px;
     display: block;
+    opacity: 0;
     content:'Данный фрагмент известного видео с Ютуба, которое было давно удалено из-за нарушений правил сайта, описывает историю самокатов и влияние иллюминатов на развитие электросамокатов.';
     background-color: #444;
     color: #fff;
-    animation-name: video_after_hide;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    /*animation-name: video_after_hide;
     animation-duration: 0.5s;
     animation-timing-function: linear;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards;*/
 }
 
 div#video_with_text:hover::before {
@@ -289,6 +291,7 @@ div#video_with_text:hover::before {
     bottom: 0;
     right: -270px;
     display: block;
+    opacity: 1;
     width: 300px;
     padding: 10px;
     content:'Данный фрагмент известного видео с Ютуба, которое было давно удалено из-за нарушений правил сайта, описывает историю самокатов и влияние иллюминатов на развитие электросамокатов.';
@@ -296,10 +299,12 @@ div#video_with_text:hover::before {
     border-radius: 10px;
     background-color: #444;
     color: #fff;
-    animation-name: video_after_show;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    /*animation-name: video_after_show;
     animation-duration: 0.5s;
     animation-timing-function: linear;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards;*/
 }
 
 /*Адаптивная галерея*/
@@ -335,18 +340,47 @@ div#image_container img {
 
 div#image_container div.image_container_img::after {
     content: "Картинка из адаптивной галереи фотографий, связанных с электросамокатами";
-    animation-name: image_after_hide;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    position:absolute;
+    bottom: 10px;
+    top: 5px;
+    left: 5px; 
+    right: 0;
+    z-index:2;
+    border: 1px solid rgba(0,0,0,0);
+    border-radius: 5px;
+    background-color: rgba(0, 255, 0, 0.7);
+    box-shadow: 0px 0px 2px 5px rgba(0, 255, 0, 0.7);
+    transition-duration: 0.5s;
+    display: block;     
+    opacity: 0;
+    /*animation-name: image_after_hide;
     animation-duration: 0.5s;
     animation-timing-function: linear;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards;*/
 }
 
 div#image_container div.image_container_img:hover::after {
     content: "Картинка из адаптивной галереи фотографий, связанных с электросамокатами";
-    animation-name: image_after_show;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    position:absolute;
+    bottom: 10px;
+    top: 5px;
+    left: 5px; 
+    right: 0;
+    z-index:2;
+    border: 1px solid rgba(0,0,0,0);
+    border-radius: 5px;
+    background-color: rgba(0, 255, 0, 0.7);
+    box-shadow: 0px 0px 2px 5px rgba(0, 255, 0, 0.7);
+    display: block;     
+    opacity: 1;
+    /*animation-name: image_after_show;
     animation-duration: 0.5s;
     animation-timing-function: linear;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards;*/
 }
 
 /*элемент уведомлений*/
