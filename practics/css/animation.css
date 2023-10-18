@@ -184,22 +184,11 @@
 }
 
 @keyframes video_after_hide {
-    from {
-        background-color: #444;
-        color: #fff;
-        width: 300px;
-        opacity: 1;
-        display: block;
-    }
-    
-    98% {
-        background-color: #444;
-        color: #fff;
-        width: 300px;
+    to {
+        content: "";
+        display: none;
         opacity: 0;
-        display: block;
     }
-    
     99% {
         background-color: #444;
         color: #fff;
@@ -207,10 +196,81 @@
         opacity: 0;
         display: none;
     }
-
-    to {
-        content: "";
-        display: none;
+    98% {
+        background-color: #444;
+        color: #fff;
+        width: 300px;
         opacity: 0;
+        display: block;
+    }
+    from {
+        background-color: #444;
+        color: #fff;
+        width: 300px;
+        opacity: 1;
+        display: block;
+    }
+}
+
+@keyframes bg_sq_show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bg_sq_hide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes background_square_1_movement {
+    from {
+        transform: translate(0px,0px);
+    }
+    25% {
+        transform: translate(0px,50px);
+    }
+    50% {
+        transform: translate(50px,50px);
+    }
+    75% {
+        transform: translate(50px,0px);
+    }
+    to {
+        transform: translate(0px,0px);
+    }
+}
+
+@keyframes background_square_2_movement {
+    from {
+        transform: translate(0px,0px);
+    }
+    25% {
+        transform: translate(0px,-50px);
+    }
+    50% {
+        transform: translate(-50px,-50px);
+    }
+    75% {
+        transform: translate(-50px,0px);
+    }
+    to {
+        transform: translate(0px,0px);
+    }
+}
+
+@keyframes ms_movement {
+    from {
+        transform: translate(0px,0px);
+    }
+    to {
+        transform: translate(-10px, 50px);
     }
 }
