@@ -1,0 +1,772 @@
+@import url("fonts.css");
+@import url("animation.css");
+
+body {
+    background: #888 url("../media/bg/background 2.jpg");
+    background-attachment: scroll;
+    background-repeat: repeat-y;
+    background-size: 100%;
+}
+
+em#small_font {
+    font-size: 20%;
+}
+
+div#loading {
+    width:100%;
+    height:10000px;
+    margin:-10px;
+    border:none;
+    padding:0px;
+    background-color: #fff;
+    position:fixed;
+    z-index:1000;
+}
+
+img#loading-gif{
+    width:10%;
+    height:10%;
+    position:fixed;
+    top:45%;
+    left:45%;
+    z-index: 1001;
+}
+
+div.page_wrap {
+    width:980px;
+    margin:10px auto;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    height:auto;
+}
+
+header {
+    position: sticky;
+    top:-10px;
+    margin: 10px auto;
+    width: 100%;
+    min-height: 118px;
+    background-color: #fff;
+    border:3px solid #000;
+    border-radius:10px;
+    z-index: 100;
+}
+
+#top_of_the_site {
+    border-radius: 10px;
+    border: none;
+    margin: 10px 0px;
+    width: 100%;
+    max-width: 413px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+nav {
+    width: 80%;
+}
+
+footer {
+    width: 60%;
+}
+
+main {
+    margin:10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+div.row {
+    margin:10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+section {
+    border: 2px solid #000;
+    background-color: #ddd;
+    padding:20px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 0px 7px;
+    height: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: auto;
+}
+
+article {
+    border: 2px solid #d8d;
+    background-color: #fdf;
+    padding:20px;
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px auto;
+    overflow: auto;
+}
+
+aside{
+    border: 2px dashed #888;
+    background-color: #eee;
+    padding:20px;
+    border-radius:10px;
+    width: 30%;
+    margin: 0px;
+    overflow: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+div.image_and_text{
+    border: none;
+    padding:0px;
+    margin: 0px 10px;
+    margin-left:0px;
+    display: inline-block;
+    height: auto;
+}
+
+div.image_and_text div.image {
+    border: none;
+    padding:20px;
+    width:25%;
+    min-width:300px;
+    float: right;
+}
+
+div.image_and_text div.text {
+    border: none;
+    padding: 20px;
+    width:100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto-Serif', 'Times New Roman', serif;
+}
+
+body {
+    font-family: 'Rubik', 'Arial', sans-serif;
+}
+
+.to_the_top_button {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+/*Навигация на мобильной версии сайта*/
+nav#mobile_nav {
+    display: none;
+    width:auto;
+    min-height: 108px;
+}
+
+nav#mobile_nav #mobile_nav_checkbox, nav#mobile_nav div#mobile_nav_hideable {
+    margin-top:150px;
+    display: none;
+}
+
+nav#mobile_nav label {
+    cursor: pointer;
+}
+
+nav#mobile_nav #mobile_nav_checkbox:checked ~ label {
+    cursor: pointer;
+}
+
+nav#mobile_nav #mobile_nav_checkbox ~ label > img {
+    border: none;
+    position:absolute;
+    right:20px;
+    top:20px;
+}
+
+nav#mobile_nav #mobile_nav_checkbox:checked ~ label > img {
+    border: none;
+    content: url("../media/mobile_nav_checked.png");
+    position:absolute;
+    right:20px;
+    top:20px;
+}
+
+nav#mobile_nav #mobile_nav_checkbox:checked ~ div#mobile_nav_hideable {
+    display: block;
+}
+
+/*Навигация на обычной версии сайта*/
+nav#desktop_nav {
+    border: 2px solid #f88;
+    background-color: rgb(255, 189, 189);
+    padding:20px;
+    border-radius: 10px;
+    width: 40%;
+    margin: 20px 20px;
+    overflow: hidden;
+    float:right;
+    animation-name: desktop_nav_hide;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    z-index: 1;
+    opacity: 0.9999;
+}
+
+nav#desktop_nav:hover {
+    animation-name: desktop_nav_show;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+nav a {
+    color: #00f;
+    text-decoration: none;
+}
+
+nav a:visited {
+    color: #88f;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+ul > li {
+    list-style: square;
+}
+
+img {
+    border-radius: 10px;
+    border: 3px solid #000;
+    margin: 10px 0px;
+    width: 80%;
+    max-width: 300px;
+}
+
+/*Видео с анимированной подписью*/
+
+div#video_with_text {
+    position: relative;
+    margin: 20px;
+    padding: 20px;
+    width: 350px;
+}
+
+div#video_with_text::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -270px;
+    display: block;
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    display: block;
+    content:'Данный фрагмент известного видео с Ютуба, которое было давно удалено из-за нарушений правил сайта, описывает историю самокатов и влияние иллюминатов на развитие электросамокатов.';
+    background-color: #444;
+    color: #fff;
+    animation-name: video_after_hide;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    content:'Данный фрагмент известного видео с Ютуба, которое было давно удалено из-за нарушений правил сайта, описывает историю самокатов и влияние иллюминатов на развитие электросамокатов.';
+    background-color: #444;
+    color: #fff;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    /*animation-name: video_after_hide;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;*/
+}
+
+div#video_with_text:hover::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -270px;
+    display: block;
+    opacity: 1;
+    width: 300px;
+    padding: 10px;
+    content:'Данный фрагмент известного видео с Ютуба, которое было давно удалено из-за нарушений правил сайта, описывает историю самокатов и влияние иллюминатов на развитие электросамокатов.';
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: #444;
+    color: #fff;
+    animation-name: video_after_show;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    /*animation-name: video_after_show;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;*/
+}
+
+/*Адаптивная галерея*/
+div#image_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:10px;
+    width: 90%;
+    margin: 20px auto;
+    justify-content: space-around;
+    align-content: space-around;
+    align-items: stretch;
+}
+
+div#image_container div.image_container_img {
+    display: inline-block;
+    position: relative;
+    flex-basis:30%;
+    width:100%;
+    height:100%;
+    flex-grow:0;
+    flex-shrink:1;
+    opacity: 1;
+    transition-duration: 0.5s;
+}
+
+div#image_container img {
+    margin:0;
+    width:100%;
+    height:100%;
+}
+
+div#image_container div.image_container_img::after {
+    content: "Картинка из адаптивной галереи фотографий, связанных с электросамокатами";
+    animation-name: image_after_hide;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    position:absolute;
+    bottom: 10px;
+    top: 5px;
+    left: 5px; 
+    right: 0;
+    z-index:2;
+    border: 1px solid rgba(0,0,0,0);
+    border-radius: 5px;
+    background-color: rgba(0, 255, 0, 0.7);
+    box-shadow: 0px 0px 2px 5px rgba(0, 255, 0, 0.7);
+    transition-duration: 0.5s;
+    display: block;     
+    opacity: 0;
+    /*animation-name: image_after_hide;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;*/
+}
+
+div#image_container div.image_container_img:hover::after {
+    content: "Картинка из адаптивной галереи фотографий, связанных с электросамокатами";
+    animation-name: image_after_show;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    position:absolute;
+    bottom: 10px;
+    top: 5px;
+    left: 5px; 
+    right: 0;
+    z-index:2;
+    border: 1px solid rgba(0,0,0,0);
+    border-radius: 5px;
+    background-color: rgba(0, 255, 0, 0.7);
+    box-shadow: 0px 0px 2px 5px rgba(0, 255, 0, 0.7);
+    display: block;     
+    opacity: 1;
+    /*animation-name: image_after_show;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;*/
+}
+
+/*декорация нижней части*/
+footer address {
+    min-width: 350px;
+}
+
+.footer_input {
+    border: 2px solid #000;
+    background-color: #ff6;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    position:relative;
+}
+
+.footer_input:hover {
+    border: 2px solid #888;
+    background-color: #ff9;
+    transition-duration: 0.5s;
+    position:relative;
+}
+
+.footer_input:hover::before {
+    content:'';
+    border: 4px solid #ff0;
+    animation: pulse 0.5s linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:2;
+}
+
+.hideable_block {
+    display: inline-block;
+    border: 5px inset #ff8;
+    background-color: rgb(255, 255, 189);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0px;
+    width:80%;
+}
+
+.hideable_block.left {
+    width:40%;
+    float: left;
+    overflow: auto;
+}
+
+.hideable_block.right {
+    width:40%;
+    float: right;
+    overflow: auto;
+}
+
+address{
+    border: 5px outset #ff8;
+    background-color: rgb(255, 255, 189);
+    padding:20px;
+    border-radius: 10px;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom:10px;
+    text-align: center;
+}
+
+footer {
+    border: 2px solid #ff8;
+    background-color: rgb(255, 255, 189);
+    padding:20px;
+    border-radius: 10px;
+    width: 60%;
+    min-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    overflow: auto;
+}
+
+footer img {
+    margin: 10px 0px;
+    border: none;
+    width: 234px;
+    max-width: none;
+}
+
+form {
+    border: 2px solid #8f8;
+    background-image: linear-gradient(0deg, rgba(60,78,60,0.9) 25%, rgba(189,255,189,0.9) 50%, rgba(60,78,60,0.9) 90%);
+    padding:20px;
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+form > div.fieldset_glassmorphism {
+    position: relative;
+    height:auto;
+    margin: 100px 10px;
+}
+
+form > div.fieldset_glassmorphism > fieldset {
+    position: relative;
+    opacity: 0.9999;
+    z-index: 3;
+    width:80%;
+    display: inline-block;
+    border: 2px solid #000;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.33);
+    text-align: left;
+}
+
+fieldset + div.moving_squares > div.moving_square {
+    position:absolute;
+    width:75px;
+    height:75px;
+    border-radius:10px;
+    animation: bg_sq_hide 0.5s 1 forwards, ms_movement 2s 1 alternate calc(-1s * var(--i));
+    background-color: rgba(255, 255, 255, 0.33);
+    backdrop-filter: blur(10px);
+    z-index:4;
+}
+
+fieldset:hover + div.moving_squares > div.moving_square {
+    position:absolute;
+    width:75px;
+    height:75px;
+    border-radius:10px;
+    animation: bg_sq_show 0.5s 1 forwards, ms_movement 2s infinite alternate calc(-1s * var(--i));
+    background-color: rgba(255, 255, 255, 0.33);
+    backdrop-filter: blur(10px);
+    z-index:4;
+}
+
+div.moving_square#ms1 {
+    top:-10px;
+    left:-10px;
+    width:50px;
+    height:50px;
+}
+
+div.moving_square#ms2 {
+    top:30px;
+    right:-10px;
+    width:75px;
+    height:75px;
+}
+
+div.moving_square#ms3 {
+    bottom:25px;
+    right:10px;
+    width:25px;
+    height:25px;
+}
+
+div.moving_square#ms4 {
+    bottom:30px;
+    left:-10px;
+    width:50px;
+    height:50px;
+}
+
+/*fieldset#form_FIO {
+    background-color: rgba(255, 0, 255, 0.33);
+}
+
+fieldset#form_contacts {
+    background-color: rgba(0, 0, 255, 0.33);
+}
+
+fieldset#form_question1 {
+    background-color: rgba(255, 255, 0, 0.33);
+}
+
+fieldset#form_question2 {
+    background-color: rgba(0, 255, 255, 0.33);
+}
+
+fieldset#form_date {
+    background-color: rgba(255, 0, 0, 0.33);
+}
+
+fieldset#city_select_field {
+    background-color: rgba(255, 255, 255, 0.33);
+}
+
+fieldset#feedback_field {
+    background-color: rgba(0, 255, 0, 0.33);
+}*/
+
+fieldset > legend {
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 0px 10px;
+    background-color: #fff;
+}
+
+fieldset > label {
+    margin: 10px;
+    width:100%;
+    display: inline-block;
+}
+
+label > input {
+    border: 2px solid #000;
+    background-color: #eee;
+    margin-right: 1ch;
+}
+
+label > input:hover {
+    border: 2px solid #ff0;
+    background-color: #ff8;
+}
+
+label > input:focus {
+    border: 2px solid #c60;
+    background-color: #ff0;
+}
+
+label > input::placeholder {
+    color: #88f;
+    font-style: italic;
+}
+
+label > select {
+    border: 2px solid #000;
+    background-color: #eee;
+    margin-right: 1ch;
+}
+
+label > select:hover {
+    border: 2px solid #ff0;
+    background-color: #ff8;
+}
+
+label > select:focus {
+    border: 2px solid #c60;
+    background-color: #ff0;
+}
+
+label > textarea {
+    border: 2px solid #000;
+    background-color: #eee;
+    margin-right: 1ch;
+}
+
+label > textarea:hover {
+    border: 2px solid #ff0;
+    background-color: #ff8;
+}
+
+label > textarea:focus {
+    border: 2px solid #c60;
+    background-color: #ff0;
+}
+
+/*
+далее идет оптимизация под разную ширину окна
+
+    Ширина окна (пиксели) | Поведение
+    ----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    1600 и более          | Загружается расширенная версия сайта: все section идут по центру, aside - слева и справа от section
+    1001-1599             | Загружается стандартная версия сайта: section занимают всю доступную ширину сайта, aside делят место с section; доступная ширина - 1000 пикселей
+    751-1000              | Загружается стандартная версия сайта: section занимают всю доступную ширину сайта, aside делят место с section; общая ширина элементов равна 98% от ширины сайта
+    750 и менее           | Загружается мобильная версия сайта: все блоки идут в одной колонке
+*/
+
+@media screen and (min-width: 1600px) {
+    div.page_wrap {
+        width:1500px;
+    }
+    div.row.left_aside {
+        justify-content: left;
+    }
+    div.row.right_aside {
+        justify-content: right;
+    }
+    div.cards_prac7 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    div.notification_block{
+        top: 10px;
+    }
+    section {
+        width: 50%;
+        flex-grow: 0;
+    }
+    aside {
+        width: 20%;
+        flex-grow: 0;
+    }
+    .hideable_block.left, .hideable_block.right {
+        min-width: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    div.page_wrap {
+        width:98%;
+    }
+    div.notification_block{
+        top: 10px;
+    }
+    .hideable_block.left, .hideable_block.right {
+        width:80%;
+        min-width: 350px;
+        float: none;
+    }
+    div.cards_prac7 {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}
+
+@media screen and (max-width: 750px) {
+
+    div.row {
+        flex-direction: column;
+    }
+
+    aside, section {
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .hideable_block.left, .hideable_block.right {
+        width:80%;
+        min-width: 350px;
+        float: none;
+    }
+
+    nav#mobile_nav {
+        display: inline-block;
+    }
+
+    nav#desktop_nav {
+        display: none;
+    }
+
+    div.cards_prac7 {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    div.cards_prac7[only_desktop] > * {
+        display: none !important;
+    }
+
+    div.cards_prac7[only_desktop] {
+        min-height: 0px !important;
+        height: auto;
+    }
+
+    div.cards_prac7[only_desktop]::after {
+        content: 'Данный контент может быть корректно отображен только при ширине окна более 1000 пикселей.';
+        display: inline;
+    }
+}
