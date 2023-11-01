@@ -11,6 +11,7 @@
         <link rel="preload" href="js/hide_management v3.js" as="script" onload="init();">
         <title>ООО "Электросамокаты"</title> <!-- название страницы -->
         <script src="js/hide_management v3.js"></script>
+        <script src="js/like_button.js"></script>
     </head>
     <body onload="init();">
         <div id="loading">
@@ -295,6 +296,13 @@
                             Видео недоступно. Возможно, это из-за проблем с браузером :(
                         </iframe>
                     </div>
+                    <div id="like_button">
+                        <button id="like" onclick="ToogleLike();"><img src="media/like.png" alt="like" style="width: 50px; height: 50px;" id="like_img"></button><br>
+                        <div id="like_button_amogus" style="width:500px; height:250px; border:2px solid #000; position: relative;" onmousemove="CreateNewLike();">
+
+                        </div>
+                        Для рисования нажмите на кнопку амогуса и водите мышкой в этой рамке. Для сброса повторно нажмите на кнопку.
+                    </div>
                 </section>
                 <section id = "sixth">
                     <div id="image_container">
@@ -320,27 +328,6 @@
                             <img src="media/wide-putin.jpg" alt="Владимир Владимирович Путин">
                         </div>
                     </div>
-                </section>
-                <section id="form">
-                    <form method = "post" name="grid_form">
-                        <div id="top_text"><h3>Contact</h3></div>
-                        <fieldset id="Name">
-                            <label>Имя<br><input type="text" id="NameInput" required></label>
-                        </fieldset>
-                        <fieldset id="Surname">
-                            <label>Фамилия<br><input type="text" id="SurnameInput" required></label>
-                        </fieldset>
-                        <fieldset id="Email">
-                            <label>Почта<br><input type="text" id="EmailInput" required></label>
-                        </fieldset>
-                        <fieldset id="Phone">
-                            <label>Телефон<br><input type="text" id="PhoneInput" required></label>
-                        </fieldset>
-                        <fieldset id="Message">
-                            <label>Ваше сообщение:<br><input type="text" id="MessageInput" required></label>
-                        </fieldset>
-                        <button type="submit">Отправить</button>
-                    </form>
                 </section>
             </main>
             <footer>

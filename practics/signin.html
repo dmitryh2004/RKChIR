@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Вход на сайт</title>
+        <style>
+            body {
+                text-align: center;
+            }
+            button {
+                padding: 10px;
+            }
+            button#btn {
+                grid-column: span 5;
+            }
+            div.buttons {
+                display: none;
+                grid-template-columns: repeat(5, auto);
+                grid-template-rows: repeat(4, auto);
+                margin: 50px;
+                text-align: center;
+            }
+            div#title {
+                display: none;
+                margin: 50px;
+                text-align: center;
+            }
+        </style>
+        <script>
+            let authorized = false;
+
+            function Redirect(key) { //различные перенаправления на ролики
+                if (key == 1) {
+                    window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                }
+                else if (key == 2) {
+                    window.location.href = "https://www.youtube.com/watch?v=YeGuBbamkl0";
+                }
+                else if (key == 3) {
+                    window.location.href = "https://www.youtube.com/watch?v=Qskm9MTz2V4&t=16";
+                }
+                else if (key == 4) {
+                    window.location.href = "https://www.youtube.com/watch?v=EZcX0jkZ_JQ";
+                }
+                else {
+                    window.location.href = "index ver3.html";
+                }
+            }
+
+            function StartAuthorize() {
+                if (authorized == false)
+                {
+                    res = confirm("Хотите пройти авторизацию?");
+                    if (res == true) {
+                        alert("Отлично. Секундочку...");
+                        Authorize();
+                    }
+                    else
+                    {
+                        alert(":(");
+                    }
+                }
+                else {
+                    alert("Вы уже авторизованы.");
+                }
+            }
+
+            function Authorize() {
+                let login = prompt("Введите логин");
+                if (login == "Админ") {
+                    let pwd = prompt("Введите пароль");
+                    if (pwd == "Я главный") {
+                        authorized = true;
+                        alert("Здравствуйте! Сейчас появятся несколько кнопок, ведущих на основной сайт. Выберите любую из них.");
+                        let btns = document.getElementsByClassName("buttons");
+                        btns[0].style.display = "grid";
+                        document.getElementById("title").style.display = "block";
+                    }
+                    else if (pwd == null) {
+                        alert("Авторизация отменена.");
+                    }
+                    else {
+                        alert("Неверный пароль.");
+                    }
+                }
+                else if (login == null) {
+                    alert("Авторизация отменена.");
+                }
+                else {
+                    alert("А ты кто?");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="StartAuthorize();">Войти</button>
+        <div class="buttons">
+            <button onclick="Redirect(1);">На основной сайт</button>
+            <button onclick="Redirect(1);">На основной сайт</button>
+            <button onclick="Redirect(1);">На основной сайт</button>
+            <button onclick="Redirect(1);">На основной сайт</button>
+            <button onclick="Redirect(1);">На основной сайт</button>
+            <button onclick="Redirect(2);">На основной сайт</button>
+            <button onclick="Redirect(1);">На основной сайт</button>
+            <button onclick="Redirect(1);">На основной сайт</button>
+            <button onclick="Redirect(1);">На основной сайт</button>
+            <button onclick="Redirect(1);">На основной сайт</button>
+            <button onclick="Redirect(1);">На основной сайт</button>
+            <button onclick="Redirect(1);">На основной сайт</button>
+            <button onclick="Redirect(1);">На основной сайт</button>
+            <button onclick="Redirect(0);">На основной сайт</button>
+            <button onclick="Redirect(1);">На основной сайт</button>
+            <button onclick="Redirect(1);">На основной сайт</button>
+            <button onclick="Redirect(1);">На основной сайт</button>
+            <button onclick="Redirect(3);">На основной сайт</button>
+            <button onclick="Redirect(1);">На основной сайт</button>
+            <button onclick="Redirect(4);">На основной сайт</button>
+            <button id="btn" onclick="window.location.href='index ver3.html';">А можно без этих шуток???</button>
+        </div>
+    </body>
+</html>
