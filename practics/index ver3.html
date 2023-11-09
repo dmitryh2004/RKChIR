@@ -12,6 +12,8 @@
         <title>ООО "Электросамокаты"</title> <!-- название страницы -->
         <script src="js/hide_management v3.js"></script>
         <script src="js/like_button.js"></script>
+        <script src="js/capture.js"></script>
+        <script src="js/shoppingContainer.js"></script>
     </head>
     <body onload="init();">
         <div id="loading">
@@ -302,6 +304,19 @@
 
                         </div>
                         Для рисования нажмите на кнопку амогуса и водите мышкой в этой рамке. Для сброса повторно нажмите на кнопку.
+                    </div>
+                    <div id="capture_test" style="margin-top: 50px; border: 1px solid #000; padding:20px;">
+                        <h3>"Форма" с капчей</h3>
+                        [ДАННЫЕ УДАЛЕНЫ]<br>
+                        <button style="margin:20px;" id="i_am_robot" onClick="capture();">Я робот</button>
+                        <div id="submit_form_hide" style="display: none;">
+                            <button id="submit">Отправить форму</button>
+                        </div>
+                    </div>
+                    <div id="shoppingContainer" style="margin-top: 50px; border: 1px solid #000; padding:20px;">
+                        <h3>"Корзина"</h3>
+                        <button onclick="shoppingContainer.read();">Добавить новый товар</button>
+                        <button onclick="shoppingContainer.show();">Показать текущее состояние</button>
                     </div>
                 </section>
                 <section id = "sixth">
