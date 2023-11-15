@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/prac11.css">
+        <script src="js/prac11.js"></script>
+        <title>Практика 11</title>
+    </head>
+    <body onload="init();">
+        <div id="control">
+            <div id="basketManagement">
+                <h3>Управление элементами</h3>
+                <button id="addNew" onclick="addNew(); updateBasket();">+</button>
+                <button id="remove" onclick="removeRandom(); updateBasket();">-</button>
+                <button id="clearAll" onclick="clearBasket(); updateBasket();">Очистить корзину</button>
+            </div>
+            <div id="filterManagement">
+                <h3>Фильтрация</h3>
+                <label><p>Минимальное значение: </p><input id="filter_min" type="text"></label>
+                <label><p>Максимальное значение: </p><input id="filter_max" type="text"></label>
+                <button id="filter" onclick="startFilter();">Фильтровать</button>
+            </div>
+            <div id="sortManagement">
+                <h3>Сортировка</h3>
+                <div id="sortDirection">
+                    <label><input id="decrease" name="sortDirection" type="radio">по убыванию</label><br>
+                    <label><input id="increase" name="sortDirection" type="radio">по возрастанию</label>
+                </div>
+                <button id="sort" onclick="startSort();">Сортировать</button>
+            </div>
+        </div>
+        <div id="basket">
+            <h2>Корзина</h2>
+            <div id="total">Итоговая стоимость: <div id="totalEditable" style="display: inline;">0</div> рублей</div>
+            <br><u>Товары:</u><br>
+            <div id="basketEditable">
+                Товаров нет
+            </div>
+        </div>
+        <div id="filtered">
+            <h3>Результат фильтрации элементов:</h3>
+            <div id="filteredEditable">
+                Товаров нет
+            </div>
+        </div>
+        <div id="help">
+            <h3>Справка</h3>
+            При нажатии кнопки + добавляется самокат со случайным номером и стоимостью от 1 до 100 рублей.
+            <br>
+            При нажатии кнопки - удаляется случайный самокат.<br>
+        </div>
+    </body>
+</html>
