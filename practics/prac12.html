@@ -141,18 +141,25 @@
         <div class="control_panel">
             <button id="run_task1" onclick="task1();">Запустить задание 1</button>
             <button id="run_task2" onclick="task2();">Запустить задание 2</button>
+            <button id="run_task3" onclick="task3();">Запустить задание 3</button>
+            <button id="run_task4" onclick="task4();">Запустить задание 4</button>
         </div>
         <div class="notifications_block">
             <div id="notification_bell_bg">
                 
             </div>
             <img id="notification_bell" src="media/notification.png" alt="notification bell" style="width: 50px; height: 50px; display:inline;">
-            <div id="count">
+            <div id="count" style="display:none;">
                 0
             </div>
             <div class="notifications_hideable">
 
             </div>
+        </div>
+        <div id="list">
+            <ul id="list_ul">
+
+            </ul>
         </div>
 
         <script>
@@ -187,6 +194,7 @@
                 notification.appendChild(newElem);
 
                 innerDiv.innerHTML = String(cur);
+                count.style.display = "block";
                 count.textContent = cur;
                 newElem.textContent = " " + array[cur-1];
                 newElem.insertAdjacentElement("afterbegin", innerDiv);
@@ -210,6 +218,40 @@
                 count.style.setProperty("background-color", "#888");
                 await pause(10000);
                 count.style.setProperty("background-color", "#f08");
+            }
+
+            async function task3() {
+                var input = prompt("Введите содержимое нового элемента");
+                if ((input != null) && (input != ""))
+                {
+                    var ul = document.getElementById("list_ul");
+                    var newElem = document.createElement("li");
+                    newElem.textContent = input;
+                    ul.appendChild(newElem);
+                }
+                await sleep(100);
+                if ((input != null) && (input != "")) task3();
+            }
+
+            async function task4() {
+                var input = prompt("Введите текст уведомления");
+                if (input != null)
+                {
+                    var erasableElem = document.createElement("div");
+                    erasableElem.textContent = " " + input;
+                    erasableElem.classList.add("notification_unit");
+                    var erasableElemNumber = document.createElement("div");
+                    erasableElemNumber.classList.add("notification_number");
+                    erasableElemNumber.textContent = "13";
+                    erasableElem.insertAdjacentElement("afterbegin", erasableElemNumber);
+
+                    var notification = document.getElementsByClassName("notifications_hideable")[0];
+                    notification.appendChild(erasableElem);
+
+                    await sleep(1500);
+
+                    notification.removeChild(erasableElem);
+                }
             }
         </script>
     </body>
