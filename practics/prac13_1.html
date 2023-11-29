@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            img { width: 150px; height: 90px; }	
+            .container { height:220px; width:220px; border:1px solid #424242; }
+
+            .container, .container * {
+            /* Свойства изменение которых необходимо отслеживать */
+            transition-property: width, height, padding, margin;
+
+            /* Устанавливаем "незаметную для глаза" длительность перехода */
+            transition-duration: 1ms;
+            }
+        </style>
+    </head>
+    <body onload="init();">
+        <div class="container">
+            <img onLoad="setImgPos(this)" src="media/15 social credit.jpg">
+        </div>
+        <script>
+
+            function init() {
+                var element = document.querySelector('container');
+                var observer = new ResizeObserver(function(entries) {
+                for (let entry of entries) {
+                    console.log('Элемент изменен');
+                }
+                });
+                console.log(typeof(element));
+                observer.observe(element);
+            }
+
+            function setImgPos(img){
+                var cont = img.parentElement;
+                var boxWidth = cont.clientWidth;
+                var boxHeight = cont.clientHeight;
+                
+                if(img.width < boxWidth)
+                    img.style.marginLeft = ((boxWidth - img.width) / 2) + 'px';
+                if(img.height < boxHeight)
+                    img.style.marginTop = ((boxHeight - img.height) / 2) + 'px';
+            }
+        </script>
+    </body>
+</html>
